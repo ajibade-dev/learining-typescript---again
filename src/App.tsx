@@ -3,6 +3,15 @@ import Greet from './components/Greet';
 import './App.css';
 import Person from './components/Person';
 import PersonList from './components/PersonList';
+import Heading from './components/Heading';
+import Status from './components/Status';
+import Oscar from './components/Oscar';
+import Button from './components/Button';
+import Input from './components/Input';
+import Container from './components/Container';
+import LoggedIn from './components/state/LoggedIn';
+import Counter from './components/state/Counter';
+
 
 function App() {
 const personName = {
@@ -34,7 +43,19 @@ const nameList = [
       />
       <Person name={personName} />
       <PersonList names={nameList} />
-    </div>
+      <Status status='success' />
+      <Heading>Placeholder text</Heading>
+      <Oscar>
+      <Heading>Oscar goes to Leonardo Davinci</Heading>
+      </Oscar>    
+      <Button handleClick={(event, id) => {
+        console.log('Button CLicked', event, id)
+      }}/>
+      <Input value="" handleChange={event => console.log(event)} />
+      <Container styles={{ border: '1px solid black', padding: '1rem'}} />
+      <LoggedIn />
+      <Counter />
+        </div>
   );
 }
 
