@@ -1,10 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from "./ThemeContext"
 
-type Props = {}
 
-const Box = (props: Props) => {
+const Box = () => {
+const theme = useContext(ThemeContext)
+
   return (
-    <div>Box</div>
+    <div style={{ backgroundColor: theme.dark.main}}>Box</div>
   )
 }
 

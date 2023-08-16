@@ -11,7 +11,14 @@ import Input from './components/Input';
 import Container from './components/Container';
 import LoggedIn from './components/state/LoggedIn';
 import Counter from './components/state/Counter';
-
+import { ThemeContextProvider } from './components/context/ThemeContext';
+import Box from './components/context/Box';
+import User from './components/context/User';
+import { UserContextProvider } from './components/context/UserContext';
+import { Counters } from './class/Counters';
+import { Mutable } from './ref/Mutable';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
 
 function App() {
 const personName = {
@@ -36,6 +43,7 @@ const nameList = [
 
   return (
     <div className="App">
+      <ThemeContextProvider>
       <Greet 
       name='Vishwas'
       messageCount={20}
@@ -55,6 +63,12 @@ const nameList = [
       <Container styles={{ border: '1px solid black', padding: '1rem'}} />
       <LoggedIn />
       <Counter />
+      <Box />
+      <Mutable />
+      <UserContextProvider><User /></UserContextProvider>
+      <Counters message='The count value is ' />
+      <Private  isLoggedIn={true} component={Profile}/>
+      </ThemeContextProvider>
         </div>
   );
 }

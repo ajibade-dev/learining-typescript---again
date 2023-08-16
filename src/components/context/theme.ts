@@ -8,7 +8,7 @@ const theme =  {
 
  dark:{
     main: '#f50057',
-    text: "#fff",
+    text: "#000000",
  },
  
 }
